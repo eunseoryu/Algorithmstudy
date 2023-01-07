@@ -1,6 +1,6 @@
 # Algorithmstudy
 
-####study algorithm file
+### studying algorithm file
 --------------
 studying sites
 - beakjoon - https://www.acmicpc.net/
