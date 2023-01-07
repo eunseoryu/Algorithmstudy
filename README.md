@@ -1,5 +1,3 @@
-# Algorithmstudy
-
 ### studying algorithm file
 --------------
 studying sites
