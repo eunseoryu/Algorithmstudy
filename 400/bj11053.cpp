@@ -1,26 +1,39 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm> 
+
 using namespace std;
 
+int main()
+{
 
-int dp[1001];
-void slv(){
-    ios:: sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
+	int n;
+	int dp[1000] = {};
+	int arr[1000] = {};
+	int sum = 0;
 
-    int n, a, b=0;
+	cin >> n;
 
-    cin >> n;
-    dp[0] = 0;
-    for(int i=1; i<=n; i++){
-        cin >> a;
-        dp[i] = (a > b)? dp[i-1] +1 : dp[i-1];
-        b = a;
-    }
+	for (int i = 0; i < n; i++)
+	{
+		cin >> arr[i];
+	}
 
-    cout << dp [n];
-}
-int main(){
-    slv();
-    return 0;
+	
+
+
+	for (int i = 0; i < n; i++)
+	{
+		dp[i] = 1;
+
+		for (int j = 0; j < i; j++)
+		{
+			if (arr[i] > arr[j])
+			{
+				dp[i] = max(dp[i], dp[j] + 1);
+			}
+		}
+		sum = max(sum, dp[i]);
+	}
+	
+	cout << sum << endl;
 }
